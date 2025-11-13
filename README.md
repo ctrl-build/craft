@@ -48,9 +48,14 @@ This project is configured for deployment on Cloudflare Pages.
 2. **Build Settings**
    - **Framework preset**: Next.js (Cloudflare will auto-detect)
    - **Build command**: `npm run build`
-   - **Build output directory**: `.next` (auto-detected)
+   - **Build output directory**: `.next` (IMPORTANT: Make sure this is set correctly)
    - **Root directory**: `/` (root of repository)
    - **Node version**: 20.x or later (set in Environment Variables if needed)
+   
+   **Important**: If you get a 404 error after deployment:
+   - Verify the build output directory is set to `.next` (not `out` or `build`)
+   - Check the build logs in Cloudflare dashboard to ensure the build succeeded
+   - Make sure all static files are in the `public` directory
 
 3. **Environment Variables**
    - Add `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` in the Cloudflare Pages dashboard

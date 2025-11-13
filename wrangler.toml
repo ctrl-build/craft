@@ -8,3 +8,8 @@ name = "craft"
 [env.preview]
 name = "craft-preview"
 
+# Cloudflare Pages configuration for Next.js
+[build]
+command = "npm run build"
+cwd = "."
+

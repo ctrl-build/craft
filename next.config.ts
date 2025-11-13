@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // Cloudflare Pages configuration
-  // Cloudflare Pages has native Next.js support - no special output needed
+  // For Next.js 16, Cloudflare Pages has native support
   
   // Image optimization - Cloudflare handles this automatically
   images: {
@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
   
   // Ensure proper static asset handling
   trailingSlash: false,
+  
+  // Base path (empty for root domain)
+  basePath: "",
+  
+  // Asset prefix (empty for root domain)
+  assetPrefix: "",
 };
 
 export default nextConfig;
