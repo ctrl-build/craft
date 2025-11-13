@@ -38,9 +38,9 @@ Before deploying, make sure to set these in Cloudflare Pages:
    - Select your repository
 
 3. **Configure Build Settings:**
-   - **Framework preset:** Next.js (auto-detected)
+   - **Framework preset:** Next.js (Static HTML Export)
    - **Build command:** `npm run build`
-   - **Build output directory:** `.next`
+   - **Build output directory:** `out` (Next.js static export outputs to 'out' directory)
    - **Root directory:** `/` (default)
    - **Node version:** 18 or higher
 
@@ -66,7 +66,7 @@ wrangler login
 npm run build
 
 # Deploy to Cloudflare Pages
-wrangler pages deploy .next --project-name=craft-pub
+wrangler pages deploy out --project-name=craft-pub
 ```
 
 ## Post-Deployment
