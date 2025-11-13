@@ -14,6 +14,6 @@ export default function Home() {
       <Space />
       <Group />
       <Contact />
-    </main>
+      </main>
   );
 }

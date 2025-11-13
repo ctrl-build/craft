@@ -1,0 +1,6 @@
+# Cloudflare Pages Redirects
+# Handle client-side routing for Next.js
+
+# Redirect trailing slashes (optional)
+/*  /index.html  200
+

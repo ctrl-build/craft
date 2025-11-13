@@ -1,0 +1,6 @@
+# Ignore files for Vercel (if using Cloudflare, this won't be used)
+node_modules
+.next
+.env.local
+.env*.local
+

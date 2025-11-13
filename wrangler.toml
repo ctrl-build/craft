@@ -1,14 +1,12 @@
-name = "craft"
+# Cloudflare Pages configuration
+# This file is optional but helps with local development and deployment
+
+name = "craft-pub"
 compatibility_date = "2024-01-01"
-pages_build_output_dir = ".next"
 
 [env.production]
-name = "craft"
+name = "craft-pub"
 
-[env.preview]
-name = "craft-preview"
-
-# Note: Build command and output directory should be set in Cloudflare Pages dashboard:
-# Build command: npm run build
-# Build output directory: .next
+# Pages configuration
+pages_build_output_dir = ".next"
 

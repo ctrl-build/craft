@@ -5,11 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/copy-html-files.js",
     "start": "next start",
-    "lint": "eslint",
-    "cf:deploy": "wrangler pages deploy .next",
-    "cf:preview": "wrangler pages dev .next"
+    "lint": "eslint"
   },
   "dependencies": {
     "next": "16.0.3",

@@ -1,24 +1,21 @@
-# Craft Pub Website
+# Craft Pub - Next.js Website
 
-A modern, responsive website for Craft Pub built with Next.js 16, React 19, and TypeScript.
+A modern, responsive website for Craft Pub built with Next.js, React, and TypeScript.
 
 ## Getting Started
 
-First, install dependencies:
+### Prerequisites
+
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
 
 ```bash
 npm install
 ```
 
-Then, run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Environment Variables
+### Environment Variables
 
 Create a `.env.local` file in the root directory:
 
@@ -26,77 +23,119 @@ Create a `.env.local` file in the root directory:
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 ```
 
-## Build
+Get your Google Maps API key from [Google Cloud Console](https://console.cloud.google.com/google/maps-apis).
 
-To create a production build:
+### Development
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see the result.
+
+### Build
+
+Build the production version:
 
 ```bash
 npm run build
 ```
 
-## Deploy on Cloudflare Pages
+Start the production server:
+
+```bash
+npm start
+```
+
+## Deployment
+
+### Cloudflare Pages
 
 This project is configured for deployment on Cloudflare Pages.
 
-### Setup Instructions
+#### Setup Steps:
 
-1. **Connect Repository**
-   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-   - Navigate to Pages
-   - Click "Create a project" and connect your GitHub repository
+1. **Push your code to GitHub/GitLab/Bitbucket**
 
-2. **Build Settings**
-   - **Framework preset**: Next.js (Cloudflare will auto-detect)
-   - **Build command**: `npm run build`
-   - **Build output directory**: `.next` (IMPORTANT: Make sure this is set correctly)
-   - **Root directory**: `/` (root of repository)
-   - **Node version**: 20.x or later (set in Environment Variables if needed)
-   
-   **Important**: If you get a 404 error after deployment:
-   - Verify the build output directory is set to `.next` (not `out` or `build`)
-   - Check the build logs in Cloudflare dashboard to ensure the build succeeded
-   - Make sure all static files are in the `public` directory
+2. **Connect to Cloudflare Pages:**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+   - Navigate to **Pages** → **Create a project**
+   - Connect your Git repository
 
-3. **Environment Variables**
-   - Add `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` in the Cloudflare Pages dashboard
-   - Go to Settings → Environment Variables
-   - Add the variable for Production, Preview, and Development environments
+3. **Configure Build Settings:**
+   - **Framework preset:** Next.js
+   - **Build command:** `npm run build`
+   - **Build output directory:** `.next`
+   - **Root directory:** `/` (leave as default)
 
-4. **Deploy**
+4. **Add Environment Variables:**
+   - In Cloudflare Pages settings, go to **Environment variables**
+   - Add `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` with your API key
+   - Make sure it's available for **Production**, **Preview**, and **Development**
+
+5. **Deploy:**
    - Cloudflare will automatically build and deploy on every push to your main branch
    - Preview deployments are created for pull requests
 
-### Local Testing with Wrangler
-
-To test the Cloudflare Pages build locally:
+#### Manual Deployment (using Wrangler CLI):
 
 ```bash
-# Install Wrangler globally (if not already installed)
+# Install Wrangler CLI
 npm install -g wrangler
+
+# Login to Cloudflare
+wrangler login
 
 # Build the project
 npm run build
 
-# Preview with Wrangler
-npm run cf:preview
+# Deploy to Cloudflare Pages
+wrangler pages deploy .next
+```
+
+### Alternative: Vercel
+
+You can also deploy to Vercel:
+
+```bash
+npm install -g vercel
+vercel
 ```
 
 ## Project Structure
 
-- `/src/app` - Next.js App Router pages
-- `/src/components` - React components
-- `/src/data` - Data files (menu data, etc.)
-- `/public/assets` - Static assets (images, videos)
+```
+craft/
+├── public/           # Static assets (images, videos)
+├── src/
+│   ├── app/          # Next.js app router pages
+│   ├── components/   # React components
+│   └── data/         # Data files (menu data, etc.)
+├── next.config.ts    # Next.js configuration
+├── wrangler.toml     # Cloudflare configuration
+└── package.json      # Dependencies
+```
 
-## Technologies
+## Features
 
-- **Next.js 16** - React framework
-- **React 19** - UI library
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Google Maps API** - Map integration (optional)
+- 🎨 Modern, responsive design
+- 🚀 Optimized for performance
+- 📱 Mobile-first approach
+- 🗺️ Google Maps integration
+- 📋 Interactive menu system
+- 🎬 Video backgrounds
+- ✨ Smooth animations and transitions
 
-## Learn More
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Cloudflare Pages Documentation](https://developers.cloudflare.com/pages/)
+- **Framework:** Next.js 16
+- **Language:** TypeScript
+- **Styling:** CSS Modules + Custom CSS
+- **Fonts:** Google Fonts (Cormorant Garamond, Inter)
+- **Deployment:** Cloudflare Pages
+
+## License
+
+© 2025 CRAFT. All rights reserved.
