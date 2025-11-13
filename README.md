@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Craft Pub Website
+
+A modern, responsive website for Craft Pub built with Next.js 16, React 19, and TypeScript.
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+```
+
+## Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+## Deploy on Cloudflare Pages
+
+This project is configured for deployment on Cloudflare Pages.
+
+### Setup Instructions
+
+1. **Connect Repository**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - Navigate to Pages
+   - Click "Create a project" and connect your GitHub repository
+
+2. **Build Settings**
+   - **Framework preset**: Next.js (Cloudflare will auto-detect)
+   - **Build command**: `npm run build`
+   - **Build output directory**: `.next` (auto-detected)
+   - **Root directory**: `/` (root of repository)
+   - **Node version**: 20.x or later (set in Environment Variables if needed)
+
+3. **Environment Variables**
+   - Add `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` in the Cloudflare Pages dashboard
+   - Go to Settings → Environment Variables
+   - Add the variable for Production, Preview, and Development environments
+
+4. **Deploy**
+   - Cloudflare will automatically build and deploy on every push to your main branch
+   - Preview deployments are created for pull requests
+
+### Local Testing with Wrangler
+
+To test the Cloudflare Pages build locally:
+
+```bash
+# Install Wrangler globally (if not already installed)
+npm install -g wrangler
+
+# Build the project
+npm run build
+
+# Preview with Wrangler
+npm run cf:preview
+```
+
+## Project Structure
+
+- `/src/app` - Next.js App Router pages
+- `/src/components` - React components
+- `/src/data` - Data files (menu data, etc.)
+- `/public/assets` - Static assets (images, videos)
+
+## Technologies
+
+- **Next.js 16** - React framework
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Google Maps API** - Map integration (optional)
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Cloudflare Pages Documentation](https://developers.cloudflare.com/pages/)
