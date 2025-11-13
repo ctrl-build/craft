@@ -65,9 +65,9 @@ This project is configured for deployment on Cloudflare Pages.
    - Connect your Git repository
 
 3. **Configure Build Settings:**
-   - **Framework preset:** Next.js
+   - **Framework preset:** Next.js (Static HTML Export)
    - **Build command:** `npm run build`
-   - **Build output directory:** `.next`
+   - **Build output directory:** `out` (Next.js static export outputs to 'out' directory)
    - **Root directory:** `/` (leave as default)
 
 4. **Add Environment Variables:**
