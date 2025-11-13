@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
   
   // Asset prefix (empty for root domain)
   assetPrefix: "",
+  
+  // Output configuration for Cloudflare Pages
+  output: undefined, // Let Next.js decide the output format
 };
 
 export default nextConfig;

@@ -8,3 +8,7 @@ name = "craft"
 [env.preview]
 name = "craft-preview"
 
+# Note: Build command and output directory should be set in Cloudflare Pages dashboard:
+# Build command: npm run build
+# Build output directory: .next
+
